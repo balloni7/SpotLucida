@@ -23,6 +23,7 @@ ep = enumerate_playlist
 def clone_remaining_playlist(sp_obj, playlist_id, offset=0, new_name="New_playlist"):
     """Clone remaining palylist"""
     new_track_list = sp_obj.playlist_items(playlist_id, fields="items.track.uri", offset=offset)
+    #TODO fazer ciclo for para ir buscar tudo, basta usar offsets de 100 em 100 e usar o % para saber otoamanho do ciclo
 
     # Create a new playlist
     new_playlist = sp_obj.user_playlist_create(user=sp_obj.me()['id'], name=new_name, public=True)
@@ -38,7 +39,15 @@ def clone_remaining_playlist(sp_obj, playlist_id, offset=0, new_name="New_playli
 crp = clone_remaining_playlist
 
 
+def new_playlist():
+    pass
+
+
 def get_song_position(sp_obj, playlist_id, song_name):
+    pass
+
+
+
 
 if __name__ == '__main__':
     # Your Spotify credentials
